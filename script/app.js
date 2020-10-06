@@ -1,5 +1,5 @@
 function handleFloatingLabel() {
-  console.log('Ik kom in HandleFloatingLabel');
+  console.log('Ik kom in handleFloatingLabel');
 }
 
 const handlePasswordSwitcher = function () {
@@ -31,8 +31,26 @@ const handlePasswordSwitcher = function () {
   });
 };
 
+const handleLoginValidation = function () {
+  console.log('Ik kom in de handleLoginValidation');
+  let email = {
+    field: null,
+    errorMessage: null,
+    input: null,
+
+  },
+
+
+
+
+  email.field = document.querySelector('.js-email-field'); // . = class
+  email.errorMessage = document.querySelector('.js-email-error-mesage');
+  email.input = document.querySelector('.js-email-input');
+};
+
 document.addEventListener('DOMContentLoaded', function () {
   console.log('Script loaded!');
   handleFloatingLabel();
   handlePasswordSwitcher();
+  handleLoginValidation();
 });
