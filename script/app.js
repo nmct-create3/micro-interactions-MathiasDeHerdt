@@ -1,13 +1,9 @@
-function handleFloatingLabel() {
-   
-}
+function handleFloatingLabel() {}
 
-function handlePasswordSwitcher() {
-    
-}
+function handlePasswordSwitcher() {}
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('Script loaded!');
-    handleFloatingLabel();
-    handlePasswordSwitcher();
+  console.log('Script loaded!');
+  handleFloatingLabel();
+  handlePasswordSwitcher();
 });
