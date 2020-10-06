@@ -17,6 +17,8 @@
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/screen.css" />
+
+    <script defer src="script/app.js"></script>
   </head>
   <body>
     <section class="o-row o-row--lg o-row--login o-row--beta">
@@ -37,10 +39,10 @@
                 <label class="c-label" for="password">Password</label>
 
                 <span class="c-password-toggle-container">
-                  <input class="c-input" type="password" name="password" id="password" required />
+                  <input class="c-input c-input--password-with-toggle js-password-input" type="password" name="password" id="password" required />
 
                   <span class="c-password-toggle">
-                    <input class="o-hide-accessible" type="check" id="visibilityToggle" />
+                    <input class="o-hide-accessible c-password-toggle__checkbox js-password-toggle" type="checkbox" id="visibilityToggle" />
 
                     <label class="c-password-toggle__label" for="visibilityToggle">
                       <svg class="c-password-toggle__symbol c-password-toggle__symbol--show" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

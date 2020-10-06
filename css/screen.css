@@ -968,6 +968,14 @@ more padding on the right to avoid overlap
   /* display: var(--local-password-symbol-show, 0); */
   display: none;
 }
+
+.c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--hide {
+  display: block;
+}
+
+.c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--show {
+  display: none;
+}
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
