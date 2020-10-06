@@ -936,34 +936,37 @@ more padding on the right to avoid overlap
 */
 .c-password-toggle-container {
   position: relative;
-  color: hotpink;
+  display: block;
 }
 
 .c-password-toggle {
-  /* position: absolute; */
-  --local-password-symbol-show: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .c-password-toggle__label {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  top: calc(var(--global-baseline) * 1.5);
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
 }
 
 .c-password-toggle__symbol {
-  position: absolute;
+  display: block;
   fill: var(--global-color-neutral-x-light);
-  width: var(--global-whitespace);
-  height: var(--global-whitespace);
+  width: 20px;
+  height: 20px;
 }
 
 .c-password-toggle__symbol--show {
-  display: var(--local-password-symbol-show, 1);
+  /* display: var(--local-password-symbol-show, 1); */
+  display: block;
 }
 
 .c-password-toggle__symbol--hide {
-  display: var(--local-password-symbol-show, 0);
+  /* display: var(--local-password-symbol-show, 0); */
+  display: none;
 }
 /*------------------------------------*\
 #UTILITIES
