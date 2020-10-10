@@ -71,6 +71,10 @@
   --global-input-focus-borderColor: var(--global-color-alpha);
   --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
   --global-input-focus-boxShadow: 0 0 0 3px var(--global-input-focus-boxShadowColor);
+
+  /* errors TODO */
+  --global-color-error: crimson;
+  --global-input-error-borderColor: crimson;
 }
 
 /*------------------------------------*\
@@ -627,7 +631,8 @@ input::placeholder {
   appearance: none;
   width: 100%;
   /* border: 1px solid var(--global-input-borderColor); */
-  border: var(--global-borderWidth) solid var(--input-borderColor, var(--global-input-borderColor));
+  /* border: var(--global-borderWidth) solid var(--input-borderColor, var(--global-input-borderColor)); */
+  border: 1px solid var(--input-borderColor, var(--global-input-borderColor));
   border-radius: var(--global-borderRadius);
   background-color: var(--global-input-backgroundColor);
   color: var(--global-input-color);
@@ -671,7 +676,7 @@ more padding on the right to avoid overlap
 */
 
 .c-label {
-  --label-color: var(--global-color-neutral-xx-dark);
+  --label-color: var(--label-color, --global-color-neutral-xx-dark);
   margin-bottom: 0;
   padding-bottom: var(--global-whitespace-sm);
   font-size: 14px;
