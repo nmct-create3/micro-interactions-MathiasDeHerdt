@@ -18,23 +18,41 @@ const getDOMElements = function(){
     email.field = document.querySelector('.js-email-field');
     email.errorMessage = document.querySelector('.js-email-error-message');
     email.input = document.querySelector('.js-email-input');
-    console.log(email);
+    // console.log(email);
 
     password.field = document.querySelector('.js-password-field');
     password.errorMessage = document.querySelector('.js-password-error-message');
     password.input = document.querySelector('.js-password-input');
-    console.log(password);
+    // console.log(password);
 
     signInButton = document.querySelector('.js-sign-in-button');
+}
+
+const doubleCheckEmailAddress = function(){
+    if (isEmpty(email.input.value) || isValidEmailAddress(email.input.value)){
+        removeErrors(email.field, email.errorMessage)
+        email.input.removeEventListener('input', doubleCheckEmailAddress)
+    } else {
+        addErrors(email.field, email.errorMessage, 'The email is incorrect')
+    }
 }
 
 const enableListeners = function(){
     // blur event
     email.input.addEventListener('blur', function(){
-        if (isEmpty(email.input.value)){
+        if (isEmpty(email.input.value) && !isValidEmailAddress(email.input.value)){
             addErrors(email.field, email.errorMessage, "This field is requird")
+
+            // BELANKGRIJK -> zet geen ronde haakjes rond een named (event) function
+            // --> doubleCheckEmailAddress GOED, doubleCheckEmailAddress() SLECHT
+            // zonder de haakjes is het pas na het input event, met de haakjes voert hij het 1 keer uit als hij het script leest
+            email.input.addEventListener('input', doubleCheckEmailAddress)
         } else {
-            removeErrors(email.field, email.errorMessage)
+            if (isEmpty(email.input.value)){
+                // als het veld leeg is dan doen we de checks weg
+                removeErrors(email.field, email.errorMessage)
+                email.input.removeEventListener('input', doubleCheckEmailAddress)
+            }
         }
     })
     password.input.addEventListener('blur', function(){});

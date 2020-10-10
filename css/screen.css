@@ -676,7 +676,9 @@ more padding on the right to avoid overlap
 */
 
 .c-label {
-  --label-color: var(--label-color, --global-color-neutral-xx-dark);
+  /* --label-color: var(--label-color, --global-color-neutral-xx-dark); */
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 0;
   padding-bottom: var(--global-whitespace-sm);
   font-size: 14px;
